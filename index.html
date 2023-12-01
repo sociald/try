@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Кр</title>
 
 		<style>
 			.card {
@@ -14,7 +14,7 @@
 				text-align: center;
 				padding: 20px;
 				font-size: 30px;
-				transition: 500ms;
+				transition: 1000ms;
 
 				opacity: 0;
 
@@ -55,9 +55,9 @@
 					entries.forEach((entry) => {
 						entry.target.classList.toggle('show', entry.isIntersecting);
 
-						if (entry.isIntersecting) {
+						/* if (entry.isIntersecting) {
 							observer.unobserve(entry.target);
-						}
+						} */
 					});
 				},
 				{
