@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			.card {
+				background-color: thistle;
+				width: 300px;
+				border-radius: 20px;
+				margin: 20px;
+				text-align: center;
+				padding: 20px;
+				font-size: 30px;
+				transition: 500ms;
+
+				opacity: 0;
+
+			}
+
+			.show {
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">1</div>
+		<div class="card">2</div>
+		<div class="card">3</div>
+		<div class="card">4</div>
+		<div class="card">5</div>
+		<div class="card">6</div>
+		<div class="card">7</div>
+		<div class="card">8</div>
+		<div class="card">9</div>
+		<div class="card">10</div>
+		<div class="card">11</div>
+		<div class="card">12</div>
+		<div class="card">13</div>
+		<div class="card">14</div>
+		<div class="card">15</div>
+		<div class="card">16</div>
+		<div class="card">17</div>
+		<div class="card">18</div>
+		<div class="card">19</div>
+		<div class="card">20</div>
+
+		<script>
+			const cards = document.querySelectorAll('.card');
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						entry.target.classList.toggle('show', entry.isIntersecting);
+
+						if (entry.isIntersecting) {
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{
+					threshold: 1,
+				}
+			);
+
+			cards.forEach((card) => {
+				observer.observe(card);
+			});
+		</script>
+	</body>
+</html>
